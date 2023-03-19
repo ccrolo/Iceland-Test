@@ -1,0 +1,381 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.7rem;
+}
+
+/* Landing Page */
+.header__menu {
+  font-size: 2.8rem;
+  color: #000;
+}
+
+.header__menu:hover {
+  color: #ffa800;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+/* LANDING PAGE BODY */
+
+.landing-page__body {
+  background-image: url(../resources/img/akira-hojo-fqA4KIz9CRY-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30% 0%;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .landing-page__body {
+    background-image: none;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* MENU BODY */
+
+.menu {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Video */
+
+.background-video {
+  position: fixed;
+  max-width: 44%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  right: 0;
+}
+
+@media (min-width: 1200px) {
+  .background-video {
+    max-width: 41%;
+  }
+}
+
+/* Main Landing */
+
+.landing-page__main {
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: end;
+}
+
+@media (min-width: 768px) {
+  .landing-page__main {
+    grid-template-rows: none;
+    align-items: center;
+  }
+}
+
+.title-container__title {
+  font-size: 7.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .title-container__title {
+    font-size: 18rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title-container__title {
+    font-size: 16rem;
+  }
+}
+
+/* Main Menu */
+
+/* Menu left */
+
+.menu__left-column {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menu__background {
+  background-image: url(../resources/img/bianca-fazacas-2g6WJS_exiY-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 60%;
+  animation-name: menu-photo-background;
+  animation-duration: 0.3s;
+  animation-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.menu__background.enter{
+  animation-name: menu-photo-background-enter;
+}
+.menu__background.exit{
+  animation-name: menu-photo-background-exit;
+}
+
+
+@keyframes menu-photo-background-enter {
+  from {
+    transform: translateY(100px) translateX(-300px) scale(0.5);
+  }
+  to {
+    transform: translateY(0)  translateX(0) scale(1);
+  }
+}
+
+@keyframes menu-photo-background-exit {
+  from {
+    transform: translateY(0)  translateX(0) scale(1);
+
+  }
+  to {
+    transform: translateY(100px) translateX(-300px) scale(0.5);
+  }
+}
+
+@media (min-width: 768px) {
+  .menu__background {
+    background-image: url(../resources/img/jeff-sheldon-jTeQavJjBDs-unsplash.jpg);
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .menu__background {
+    background-image: url(../resources/img/lucas-friedrich-a0vqnNUKYLk-unsplash.jpg);
+    background-position: center 80%;
+    background-size: cover;
+    height: 80%;
+  }
+}
+
+.logo-container--menu {
+  padding: 2.7rem;
+}
+
+.menu__social-media {
+  height: 40%;
+}
+
+@media (min-width: 768px) {
+  .menu__social-media {
+    display: flex;
+  }
+}
+
+.social-media {
+  height: 100%;
+  background-color: #ffa800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: 100%;
+  transform: translateX(50%) scaleX(0);
+  /* transform-origin: right; */
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.5s ease, right 0s linear 0.5s;
+}
+
+.social-media.show {
+  transform: translateX(0) scaleX(1);
+  opacity: 1;
+  left: 0;
+  transition-delay: 0s;
+}
+
+@media (min-width: 768px) {
+  .social-media {
+    background-color: #000;
+    width: 30%;
+  }
+}
+@media (min-width: 1200px) {
+  .social-media {
+    width: 30%;
+  }
+}
+
+.social-media__logo {
+  width: 5rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .social-media__logo {
+    width: 4rem;
+  }
+}
+
+.social-media__logo:last-of-type {
+  padding-bottom: 0;
+}
+
+.menu__quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  background-color: #ffa800;
+  color: #fff;
+  font-size: 1.8rem;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.menu__quote.show {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.menu__quote-text {
+
+  text-align: center;
+  padding: 2.7rem;
+}
+
+@media (min-width: 1400px) {
+  .menu__quote-text {
+    padding: 6rem 8.7rem ;
+  }
+}
+/* Menu right */
+
+.menu__right-column {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  bottom: 0;
+  transform: translateY(100%) scaleY(0);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.5s ease-out, bottom 0s linear 0.5s;
+}
+
+.menu__right-column.show {
+  transform: translateY(0) scaleY(1);
+  opacity: 1;
+  bottom: 0;
+  transition-delay: 0s;
+}
+
+.navigation {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    padding: 0 8rem;
+  }
+}
+
+.navigation__item {
+  font-weight: 800;
+  font-size: 3.6rem;
+  text-shadow: -1px -1px 0 #ffa800, 1px -1px 0 #ffa800, -1px 1px 0 #ffa800,
+    1px 1px 0 #ffa800;
+  /* transition: color 0.5s ease; */
+  transform-origin: bottom;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 0.5s ease;
+}
+
+.navigation__item.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+.navigation__item:hover {
+  color: #ffa800;
+  transition: color 0.5s ease;
+}
+
+
+
+@media (min-width: 768px) {
+  .navigation__item {
+    font-size: 7rem;
+  }
+}
+
+.aside-header {
+  display: flex;
+  padding: 2rem;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .aside-header {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.lang {
+  visibility: hidden;
+  color: #ffa800;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .lang {
+    visibility:visible;
+    color: #ffa800;
+    font-style: italic;
+    font-size: 1.4rem;
+  }
+}
+
+.exit__logo {
+  width: 2.2rem;
+}
+
+.exit__logo:hover {
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(90deg);
+}
