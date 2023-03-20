@@ -1,6 +1,6 @@
 # Travel to Iceland Test - Run the application
 
-This project does not have any specific configuration to be able to run, as it is developed with vanilla CSS and vanilla JavaScript.
+This project does not have any specific configuration to be able to run, as it is developed with CSS and vanilla JavaScript.
 
 ## Some recommendations:
 
